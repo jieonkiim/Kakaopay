@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakaopay Clone Coding</title>
+    
+    <!-- css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- js -->
+    <script src="js/script.js"></script>
+</head>
+
+
+<body>
+    <div class="totalpage"> <!--footer까지 전체 영역 잡기-->
+        <div class="headfull"> <!--첫번째 메인 페이지 영역 잡기 (4가지 : 비디오, 헤더, (햄버거클릭)ul list, shapes)-->
+
+            <!-- 1. 비디오 & 블랙opacity 페이지 -->
+            <div class="vidpage">
+                <div class="vidpagesub">
+                    <video autoplay loop muted playsinline src="https://t1.daumcdn.net/kakaopay/20211101152741/08a0cb31a3.mp4" frameborder="0" allowfullscreen></video>
+                    <div class="blackout"></div>
+                </div>
+            </div>
+
+            <!-- 2. 헤더 부분  -->
+            <header>
+                <!-- Kakaopay -->
+                <div class="logo">
+                    <a href="#">kakao<span>pay</span></a>
+                </div>
+                <!-- 중간 : 메뉴 -->
+                <div class="menu">
+                    <div class="mlist"><a href="#">카카오페이</a></div>
+                    <div class="mlist"><a href="#">투자정보</a>
+                        <ul class="menu_click">
+                            <li><a href="#">경영정보</a>
+                            <div class="submenu"><a href="#">주주구성</a></div>
+                            <div class="submenu"><a href="#">이사회</a></div>
+                            <div class="submenu"><a href="#">정관</a></div>
+                            </li>
+                            <li><a href="#">공시정보</a></li>
+                            <li><a href="#">주가정보</a></li>
+                            <li><a href="#">재무정보</a>
+                                <div class="submenu"><a href="#">연결재무제표</a></div>
+                                <div class="submenu"><a href="#">별도재무제표</a></div>
+                            </li>
+                            <li><a href="#">IR자료실</a>
+                                <div class="submenu"><a href="#">IR 미팅예약</a></div>
+                                <div class="submenu"><a href="#">정기주주총회</a></div>
+                                <div class="submenu"><a href="#">실적발표</a></div>
+                                <div class="submenu"><a href="#">정기보고서</a></div>
+                            </li>
+                            <li><a href="#">공고사항</a></li>
+                        </ul>
+                    </div>
+                    <div class="mlist"><a href="#">서비스</a>
+                        <ul class="menu_click">
+                            <li><a href="#">생활하다</a>
+                                <div class="submenu"><a href="#">송금</a></div>
+                                <div class="submenu"><a href="#">결제</a></div>
+                                <div class="submenu"><a href="#">멤버십</a></div>
+                            </li>
+                            <li><a href="#">관리하다</a> 
+                                <div class="submenu"><a href="#">자산관</a></div>
+                                <div class="submenu"><a href="#">내문서</a></div>
+                                <div class="submenu"><a href="#">청구서</a></div>
+                            </li>   
+                            <li><a href="#">금융하다</a>
+                                <div class="submenu"><a href="#">투자</a></div>
+                                <div class="submenu"><a href="#">대출</a></div>
+                                <div class="submenu"><a href="#">보험</a></div>
+                                <div class="submenu"><a href="#">금융제휴</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mlist"><a href="#">소식</a>
+                        <ul class="menu_click">
+                            <li><a href="#">보도자료</a></li>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">공</a></li>
+                        </ul>
+                    </div>
+                    <div class="mlist"><a href="#">문의</a>
+                        <ul class="menu_click">
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">소비자보호</a>
+                                <div class="submenu"><a href="#">소비자보호</a></div>
+                                <div class="submenu"><a href="#">민원접수</a></div>
+                                <div class="submenu"><a href="#">금융정보</a></div>
+                            </li>
+                            <li><a href="#">공동인증센터</a></li>
+                            <li><a href="#">결제가맹센터</a></li>
+                            <li><a href="#">제휴/사업문의</a></li>
+                        </ul>
+                    </div>
+                    <div class="mlist"><a href="#">채용</a></div>
+                </div> <!-- menu -->
+            </header>
+
+            <!-- 3. UL List (햄버거 클릭시) -->
+           
+        
+            <!-- 4. 헤더의 shapes -->
+            <div class="fullshape">
+                <div class="verticalline">
+                    <div class="leftline"></div>
+                    <div class="midline"></div>
+                    <div class="rightline"></div>
+                </div> <!--verticalline-->
+                <div height="78.5%" class="midshape">
+                    <div class="midshapefull">
+                        <div class="leftshape">
+                            <div class="shape1"></div>
+                        </div>
+                        <div class="shape2"></div>
+                        <div class="shape3"></div>
+                    </div> <!--midshapefull-->
+                </div> <!--midshape-->
+            </div> <!--fullshape-->
+
+        </div> <!-- headfull end-->
+
+
+        <!-- 섹션 1 -->
+        <section class="section1">
+            <div class="wrap">
+                <!-- 왼쪽 이미지 -->
+                <div class="image-box">
+                    <img src="img/section1-1.jpg" class="long" alt="">
+                </div>
+
+                <div class="info-box">
+                    <!-- 아이콘 이미지 -->
+                    <div class="iconimg">
+                        <img src="img/section1-2.png" alt=""></div>
+
+                    <!-- 글 + 화살표 -->
+                    <div class="txtarwbox">
+                        <div class="textbox">
+                            <h2>카카오페이,<br>모두가 안심하고 사용하고 있어요</h2>
+                        </div>
+
+                    <!-- 페이지 연결 화살표 -->
+                        <div class="arrow">
+
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 2 (이미지 2장)-->
+        <section class="section2">
+            <div class="wrap">
+                <!-- 왼쪽 박스 -->
+                <div class="leftbox">
+                    <!-- 글 + 화살표 -->
+                    <div class="txtarwbox">
+                        <div class="textbox">
+                            <h2>내 계좌부터 카드, 대출까지<br><span>한눈에 확인해요</span></h2>
+                        </div>
+
+                    <!-- 페이지 연결 화살표 -->
+                        <div class="arrow">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 오른쪽 박스 -->
+                <div class="rightbox">
+                    <!-- 글 + 화살표 -->
+                    <div class="txtarwbox">
+                        <div class="textbox">
+                            <h2>집에서 배달, 게임은 물론<br>가까운 마트에서<span>쇼핑하세요</span></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 섹션 3 (카드 세장나오는 큰 이미지)-->
+        <section class="section3">
+            
+
+        </section>
+
+
+            <!-- 섹션 4-1 -->
+        <section class="section4">
+            <div class="wrap">
+                <!-- 왼쪽 이미지 -->
+                <div class="image-box">
+                    <img src="img/section4-1.png" class="long" alt="섹션4이미지">
+                </div>
+
+                <div class="info-box">
+                    <!-- 아이콘 이미지 -->
+                    <div class="iconimg">
+                        <img src="img/section4-2.png" alt="섹션4아이콘"></div>
+
+                    <!-- 글 + 화살표 -->
+                    <div class="txtarwbox">
+                        <div class="textbox">
+                            <h2>모두 함께 쓸 수 있는<br>기술을 공개하고 있어요</h2>
+                        </div>
+
+                    <!-- 페이지 연결 화살표 -->
+                        <div class="arrow">
+
+                        </div>
+                    </div><!-- txtarwbox -->
+                </div><!-- infobox -->
+            </div><!-- wrap -->
+
+
+            <div class="wrap">
+                <!-- 오른쪽 이미지 -->
+                <div class="image-box">
+                    <img src="img/section5-1.jpg" class="long" alt="섹션4이미지">
+                </div>
+
+                <div class="info-box">
+                    <!-- 아이콘 이미지 -->
+                    <div class="iconimg">
+                        <img src="img/section5-2.png" alt="섹션4아이콘"></div>
+
+                    <!-- 글 + 화살표 -->
+                    <div class="txtarwbox">
+                        <div class="textbox">
+                            <h2>카카오페이가<br>예비크루를 기다리고 있어요</h2>
+                        </div>
+
+                    <!-- 페이지 연결 화살표 -->
+                        <div class="arrow">
+
+                        </div>
+                    </div><!-- txtarwbox -->
+                </div><!-- infobox -->
+            </div><!-- wrap -->
+        </section>
+
+        <footer>
+            <div class="wrap">
+                <div class="footleft">
+                    <ul>
+                        <li>©Kakao Pay Corp.</li>
+                    </ul>
+                </div>
+                
+                    <div class="footmid">
+                        <ul>
+                            <li>카카오페이 윤리강령</li>
+                            <li>카카오페이 이용약관</li>
+                            <li>전자금융거래 이용약관</li>
+                            <li><span>개인정보 처리방침</span></li>
+                            <li>위치기반 서비스 이용약관</li>
+                        </ul>
+                    </div>
+                
+                <div class="footright">
+                    <ul>
+                        <li>
+                            관련 사이트 <span>+</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div> <!--totalpage end-->
+</body>
+</html>금융ㅇ
