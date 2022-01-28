@@ -101,8 +101,9 @@ header .logo {
     left: 80px;
 }
 /* 헤더 로고 부분 */
-header .logo a { display: block; }
+header .logo a { display: block; font-size: 19px; }
 header .logo span { font-weight: 600;}
+
 
 /* 헤더 가운데 메뉴 부분 */
 header .menu { 
@@ -112,7 +113,7 @@ header .menu {
     overflow: hidden;
     align-items: flex-start;
 }
-header .menu .mlist { 
+header .menu .mlist { /* 맨처음 보여지는 메뉴들 */
     display: inline-block;
     position: relative;
     width: auto;
@@ -131,9 +132,11 @@ header .menu .mlist a {
     line-height: 84px;
 }
 
-header .menu .mlist a:hover { color : var(--black); }
+header .menu .mlist a:hover { color : var(--black); font-weight: 500; }
+/* hover시, submenu 들이 보여져야함 */
+header .menu .mlist a:hover .menu_click { display: block; }
 
-header .menu .menu_click {
+header .menu .menu_click { /* 클릭하면 나오는 서브메뉴들 */
     position: absolute;
     justify-content: center;
     display: block;
@@ -145,10 +148,9 @@ header .menu .menu_click {
     left: 0;
     text-align: center;
     border-bottom: 1px solid var(--white);
-    z-index: 1;
+    /* z-index: 1; */
 }
 
-header .menu .mlist a:hover .menu_click { display: block; }
 
 header .menu .mlist .menu_click li {
     font-size: 14px;
@@ -172,40 +174,76 @@ header .menu .mlist .menu_click li .submenu {
     color: #050b1148;
     padding: 0;
 }
+header .menu .lang { 
+    height: 84px;
+    padding-right: 79px;
+    position: absolute;
+    right: 0;
+}
 
+header .menu .lang ul {
+    height: 84px;
+    align-items: center;
+    display: inline-flex;
+}
+header .menu .lang ul li {
+    display: inline-block;
+    position: relative;
+    width: 48px; 
+}
+header .menu .lang ul li:first-of-type { padding-right: 8px; }
+header .menu .lang ul li:last-of-type{ padding-left: 8px; }
 
+/* KOR | ENG 사이 줄  */
+header .menu .lang ul li:first-of-type::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 1px;
+    height: 13px;
+    background-color: rgba(255, 255, 255, 0.60);
+}
 
+header .menu .lang ul li button {
+    font-size: 14px;
+    font-weight: 100;
+    line-height: 1.57;
+    letter-spacing: -0.5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
 
-
+/* active되어있는 button 은 opacity 없는 흰색 */
+header .menu .lang ul li button.active { color: var(--white);}
 
 /* 햄버거메뉴 */
 .burger { 
-    height: 100%;
+    position: relative;
+    align-items: center;
     cursor: pointer; 
     float: right;
-    margin-top: 33px; }
+    top: 33px; 
+}
 
 .burger div {
     background-color: white;
-    width: 13px;
+    width: 15px;
     height: 1px;
     margin: 3px;
     transition: all 0.5s ease;
-    margin-left: 18px;
+    margin-left: 13px;
     margin-bottom: 5px;
+    transition: 0s ease;
+    align-items: center; text-align: center;
 }
 
+.burger:hover div { background-color: rgba(255, 255, 255, 0.60); }
 
-
-/* 햄버거 클릭 했을 때 */
-.line1.on { 
-    transform: translateY(10px) rotate(45deg);
-    transition: all 1s;
-}
-
-.line2.on { width: 0; }
-
-.line3.on { 
-    transform: translateY(-10px) rotate(-45deg);
-    transition: all 1s;
-}
+/* 햄버거 클릭시 movement */
+.toggle .line1 { transform: rotate(-45deg) translate(-4px, 4px);}
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-4px, -4px);}

@@ -7,4 +7,5 @@ img {vertical-align: middle;}
 a img {border: none;}
 li {list-style: none;}
 address, em, i {font-style: normal;}
+button { border: 0; outline: 0; color: rgba(255, 255, 255, 0.40); }
 
