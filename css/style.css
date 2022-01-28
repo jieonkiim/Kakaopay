@@ -7,6 +7,7 @@
     --gray : gray;
     --black : black; 
     --blackclear : rgba(0, 0, 0, 0.5);
+    --yellow : rgb(255, 235, 0);
 }
 
 
@@ -125,6 +126,8 @@ header .menu .mlist { /* 맨처음 보여지는 메뉴들 */
     cursor: pointer;
 }
 
+header .menu .mlist:hover header { background-color: var(--white);}
+
 header .menu .mlist a {
     position: relative;
     margin: 0 25px;
@@ -133,6 +136,22 @@ header .menu .mlist a {
 }
 
 header .menu .mlist a:hover { color : var(--black); font-weight: 500; }
+
+/* menu 들에 노란 밑줄 그어지기  */
+.underline {
+    background-image: linear-gradient(transparent calc(100% - 3px));
+    background-repeat: no-repeat;
+    background-size: 0% 85%;
+    transition: background-size 0.8s;
+}
+
+  .underline:hover {
+    background-size: 100% 85%;
+    background-image: linear-gradient(transparent 60%, #F8CD07 10%);
+  }
+
+
+
 /* hover시, submenu 들이 보여져야함 */
 header .menu .mlist a:hover .menu_click { display: block; }
 
