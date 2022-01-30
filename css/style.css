@@ -127,7 +127,7 @@ header .logo span { font-weight: 600;}
     align-items: flex-start;
 }
 
-.menu .main > li a {
+.menu .main > li a{
     position: relataabive;
     margin: 0 25px;
     display: inline-block;
