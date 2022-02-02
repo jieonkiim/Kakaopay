@@ -80,7 +80,7 @@ header {
     align-items: flex-start;
     color: var(--white);
     background: transparent;
-    z-index: 21;
+    /* z-index: 21; */
     overflow: hidden;
     transition: all 0s ease-in-out;
     transition-delay: 0.3s;
@@ -101,21 +101,25 @@ header .logo {
     left: 78px;
     top: 23px;
 }
+
 /* 헤더 로고 부분 */
 header .logo a { display: block; font-size: 21px; }
 header .logo span { font-weight: 600;}
 
 
 /* 헤더 가운데 메뉴 부분 */
-.menu { height: 84px; width: 100%;}
-.menu .main {
+.menu { height: 84px; width: 100%; display: inline-block;}
+.menu ul {
+    width: 100%;
     height: 84px;
+    margin: 0 auto;
     position: relative;
-    display: flex-start;
     padding-left: 25%;
 }
+
 .menu .main > li { 
-    display: inline-block; 
+    display: flex;
+    float: left;
     position: relative;
     width: auto;
     height: 84px;
@@ -123,33 +127,43 @@ header .logo span { font-weight: 600;}
     font-size: 16px;
     letter-spacing: -0.25px;
     font-weight: 300;
-    cursor: pointer;
-    align-items: flex-start;
 }
 
 .menu .main > li a{
-    position: relataabive;
+    position: relative;
     margin: 0 25px;
     display: inline-block;
+    justify-content: space-between;
+    align-items: center;
     line-height: 84px;
 }
 
-.menu .menu2 { 
+.menu .main li a .menu2 { 
     position: absolute; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     top: 84px; 
     left: 0; 
-    width: 100%; 
-    display: none; 
+    width: 100%;
 }
 
-.menu .sub { margin: 0 auto; float: left; width: 25%;}
-.menu .sub li { background-color: var(--white); width: 100%; color: var(--black);}
+.menu .menu2 .sub { 
+    margin: 0 auto; 
+    float: left; 
+    flex: 1;
+}
+.menu .sub li { 
+    background-color: var(--white); 
+    width: 100%; 
+    color: var(--black);
+}
 
 /* 각각의 메뉴가 호버 됐을때 검정폰트로 바뀌고 두꺼워지기 */
-.menu .main > li a:hover { color: var(--black); font-weight: 500;}
+.menu .main > li:hover { color: var(--black); font-weight: 500;}
 
 /* 한가지의 메뉴가 호버 됐을때 헤더의 배경이 하얗게 되기 */
-.menu .main > li:hover .main { background-color: var(--white);}
+.menu .main > li:hover .main { background-color: var(--black);}
 
 /* 메뉴가 호버됐을때 서브메뉴가 나오기 */
 .menu .main > li:hover .menu2 { display: block; }
