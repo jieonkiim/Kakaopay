@@ -39,14 +39,17 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     right: 0;
     bottom: 0;
     left: 0;
-    overflow: hidden
+    overflow: hidden;
+    z-index: -9999;
 }
+
 .totalpage .headfull .vidpage .vidpagesub {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -9999;
 }
 .totalpage .headfull .vidpage .vidpagesub video {
     position: absolute;
@@ -56,6 +59,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     height: 100%;
     object-fit: cover;
     transform: translate(-50%, -50%);
+    z-index: -9999;
 }
 .totalpage .headfull .vidpage .vidpagesub .blackout {
     position: absolute;
@@ -64,6 +68,7 @@ body { font-family: 'Noto Sans KR', sans-serif; }
     right: 0;
     bottom: 0;
     background: var(--blackclear);
+    z-index: -9998;
 }
 
 /* 2. 헤더 부분 ( kakaopay / gnb / lang / burger ) */
@@ -95,6 +100,7 @@ header::before {
     height: 1px;
     background-color: var(--whiteclear);
 }
+
 header a { cursor: pointer; }
 header .logo { 
     position: absolute;
@@ -108,76 +114,59 @@ header .logo span { font-weight: 600;}
 
 
 /* 헤더 가운데 메뉴 부분 */
-.menu { height: 84px; width: 100%; display: inline-block;}
-.menu ul {
-    width: 100%;
-    height: 84px;
-    margin: 0 auto;
-    position: relative;
+/* 헤더 가운데 메뉴 부분 */
+/* 헤더 가운데 메뉴 부분 */
+/* 헤더 가운데 메뉴 부분 */
+
+.menu { 
+    height: 84px; 
+    width: 100%; 
     padding-left: 25%;
 }
 
-.menu .main > li { 
-    display: flex;
-    float: left;
-    position: relative;
-    width: auto;
+.menu ul.main {
+    width: 100%;
     height: 84px;
-    padding-right: 23.5px;
+    position: absolute;
+}
+
+.menu .main>li {
+    width: auto;
+    float: left;
+    margin: 0 auto;
+    padding: 0 40px 0;    
     font-size: 16px;
     letter-spacing: -0.25px;
-    font-weight: 300;
-}
-
-.menu .main > li a{
-    position: relative;
-    margin: 0 25px;
-    display: inline-block;
-    justify-content: space-between;
-    align-items: center;
     line-height: 84px;
+    font-weight: 300;
+ }
+
+.menu .main>li a { 
+    text-align: center;
+} 
+
+.menu .main>li:hover { 
+    color: var(--black);
+    font-weight: 500;
 }
 
-.menu .main li a .menu2 { 
-    position: absolute; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    top: 84px; 
-    left: 0; 
-    width: 100%;
-}
+.menu .main>li:hover .menu2 { display: block; }
 
-.menu .menu2 .sub { 
-    margin: 0 auto; 
-    float: left; 
-    flex: 1;
-}
-.menu .sub li { 
-    background-color: var(--white); 
-    width: 100%; 
+.menu2 { 
+    display: none;
+    top: 84px;
+    left: 0;
+    width: relative;
+    position: absolute;
+    background-color: var(--white);
     color: var(--black);
 }
 
-/* 각각의 메뉴가 호버 됐을때 검정폰트로 바뀌고 두꺼워지기 */
-.menu .main > li:hover { color: var(--black); font-weight: 500;}
 
-/* 한가지의 메뉴가 호버 됐을때 헤더의 배경이 하얗게 되기 */
-.menu .main > li:hover .main { background-color: var(--black);}
-
-/* 메뉴가 호버됐을때 서브메뉴가 나오기 */
-.menu .main > li:hover .menu2 { display: block; }
+.menu ul>li a { }
+.menu2 ul { }
+.menu2 ul>li {}
+.menu2 ul>li a {}
 
 
 
-
-
-.menu .sub li a:hover { 
-    display:block;
-    content: '';
-    border-bottom: solid 3px black;  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-    transform-origin: 0% 50%;
-    transform: scaleX(1);
-}
