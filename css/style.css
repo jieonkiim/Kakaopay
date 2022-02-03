@@ -4,6 +4,7 @@
 :root {
     --white : #fff;
     --whiteclear: #d8d8d820;
+    --shapewhite: #d8d8d82d;
     --gray : gray;
     --black : black; 
     --blackclear : rgba(0, 0, 0, 0.5);
@@ -135,7 +136,7 @@ header .logo span { font-weight: 600;}
     float: left;
     margin: 0 auto;
     padding: 0 40px 0;    
-    font-size: 16px;
+    font-size: 0.95em;
     letter-spacing: -0.25px;
     line-height: 84px;
     font-weight: 300;
@@ -168,5 +169,273 @@ header .logo span { font-weight: 600;}
 .menu2 ul>li {}
 .menu2 ul>li a {}
 
+/* 헤더 오른쪽 lang KOR ENG 부분 */
+
+.lang {
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.lang ul { display: flex; align-items: center; justify-content: space-between;}
+.lang ul li { align-items: center;}
+.lang ul li a { color: var(--whiteclear); font-size: 0.85em; }
+
+.lang ul li a:not(.last)::after { 
+    content: ''; 
+    height: 0.75em;
+    width: 1px; 
+    border-right: 1px solid var(--whiteclear);
+    margin: 0 1em 0;
+}
+
+.lang ul li a.active { color: var(--white);}
+
+.burger div {
+    color: var(--white);
+    width: 20px;
+    height: 5px;
+    margin: 5px;
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* 메인페이지 가운데 shape들 */
+
+.boxshape {
+    box-sizing: border-box;
+    vertical-align: baseline;
+    letter-spacing: 0px;
+    border: 0px;
+    display: block;
+}
+
+.fullshape {
+    position: relative;
+    padding-top: 84px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullshape .verticalline {
+    position: absolute;
+    top: 84px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    pointer-events: none;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.fullshape .verticalline .leftline {
+    position: relative;
+    flex: 1;
+    border-right: solid 1px var(--shapewhite);
+}
+.fullshape .verticalline .midline {
+    position: relative;
+    flex: 3.5 0;
+}
+
+.fullshape .verticalline .midline::before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: calc(50% + 0.5px);
+    height: 100%;
+    border-right: solid 1px var(--shapewhite);
+}
+.fullshape .verticalline .rightline {
+    position: relative;
+    flex: 1;
+    border-left: solid 1px var(--shapewhite);
+}
+
+
+.fullshape .midshape {
+    position: relative;
+    color: #fff;
+    height: 78.5%;
+}
+.fullshape .midshape .midshapefull {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.fullshape .midshape .midshapefull .leftshape,
+.fullshape .midshape .midshapefull .rightshape {
+    position: relative;
+    flex: 1;
+    border-right: 1px solid var(--shapewhite);
+}
+
+.fullshape .midshape .midshapefull .shape1 { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-bottom-left-radius: 9999px;
+    border-top-left-radius: 9999px;
+    border: 1px solid var(--shapewhite);
+    border-right: 0;
+}
+
+.fullshape .midshape .midshapefull .mid_shape {
+    position: relative;
+    display: block;
+    flex: 3.5 0;
+}
+
+.fullshape .midshape .midshapefull .mid_shape::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--shapewhite);
+}
+
+.fullshape .midshape .midshapefull .shape2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.fullshape .midshape .midshapefull .shape2 .txt {
+    font-size: 4.5rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+    word-break: keep-all;
+}
+
+.fullshape .midshape .midshapefull .shape2 .icons_appngp {
+    margin-bottom: 16px;
+}
+.fullshape .midshape .midshapefull .shape2 .icons_appngp a {
+    border-radius: 9999px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    letter-spacing: -0.2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #606a74;
+    height: 56px;
+    width: auto;
+    padding: 0 22px;
+    font-size: 18px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.fullshape .midshape .midshapefull .shape3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-bottom-right-radius: 9999px;
+    border-top-right-radius: 9999px;
+    border: 1px solid var(--shapewhite);
+    border-right: 0;
+}
+ 
+.shape3::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.2;
+    background: var(--shapewhite);
+}
+
+.fullshape .lastshape {
+    position: relative;
+    color: #fff;
+    height: 21.5%;
+}
+
+.fullshape .lastshape .lastshapefull {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.fullshape .lastshape .vidbtns {
+    position: absolute;
+    right: 60px;
+    bottom: 60px;
+}
+.fullshape .lastshape .vidbtnsall {}
+.fullshape .lastshape .vidbtnsall button {
+    border-radius: 9999px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: -0.2px;
+    font-weight: 300;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #191c20;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #d2d2d2;
+    color: #f2f2f2;
+    font-weight: 500;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    font-size: 0;
+    font-weight: 500;
+}
+
+.fullshape .lastshape .sound {
+    margin-left: 18px;
+}
+
+.fullshape .lastshape .fullscreen {
+    margin-left: 18px;
+} 
+
+
+/* SECTION */
+
+.sectionfull {
+    background-color: #fff;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 16px 0 160px;
+}
