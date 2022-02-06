@@ -268,6 +268,12 @@ header .logo span { font-weight: 600;}
     position: relative;
     color: #fff;
     height: 78.5%;
+    box-sizing: border-box;
+    vertical-align: baseline;
+    letter-spacing: 0px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
 }
 .fullshape .midshape .midshapefull {
     position: relative;
@@ -377,7 +383,7 @@ header .logo span { font-weight: 600;}
 
 .fullshape .lastshape {
     position: relative;
-    color: #fff;
+    color: rgb(31, 29, 29);
     height: 21.5%;
 }
 
@@ -392,7 +398,7 @@ header .logo span { font-weight: 600;}
 .fullshape .lastshape .vidbtns {
     position: absolute;
     right: 60px;
-    bottom: 60px;
+    bottom: 150px;
 }
 .fullshape .lastshape .vidbtnsall {}
 .fullshape .lastshape .vidbtnsall button {
@@ -414,7 +420,7 @@ header .logo span { font-weight: 600;}
     font-weight: 500;
     width: 40px;
     height: 40px;
-    padding: 8px;
+    padding: 5px;
     font-size: 0;
     font-weight: 500;
 }
