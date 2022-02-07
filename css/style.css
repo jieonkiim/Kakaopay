@@ -9,6 +9,7 @@
     --black : black; 
     --blackclear : rgba(0, 0, 0, 0.5);
     --yellow : rgb(255, 235, 0);
+    --transparent : transparent;
 }
 
 
@@ -79,7 +80,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    min-width: 1200px;
+    /* min-width: 1200px; */
     min-height: 84px;
     display: flex;
     justify-content: center;
@@ -88,8 +89,8 @@ header {
     background: transparent;
     /* z-index: 21; */
     overflow: hidden;
-    transition: all 0s ease-in-out;
-    transition-delay: 0.3s;
+    transition: background-color 0.3s ease;
+    /* transition-delay: 0.3s; */
 }
 
 header::before {
@@ -151,7 +152,7 @@ header .logo span { font-weight: 600;}
     font-weight: 500;
 }
 
-.menu .main>li:hover .menu2 { display: block; }
+/* .menu .main > li:hover .menu2 { display: block; } */
 
 .menu2 { 
     display: none;
@@ -172,10 +173,11 @@ header .logo span { font-weight: 600;}
 /* 헤더 오른쪽 lang KOR ENG 부분 */
 
 .lang {
-    margin-right: 100px;
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    padding-right: 100px;
+    position: relative;
 }
 .lang ul { display: flex; align-items: center; justify-content: space-between;}
 .lang ul li { align-items: center;}
@@ -191,11 +193,22 @@ header .logo span { font-weight: 600;}
 
 .lang ul li a.active { color: var(--white);}
 
+.burger {
+    padding: 0 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 300;
+}
+
 .burger div {
-    color: var(--white);
+    background-color: #dfe1e2;
     width: 20px;
-    height: 5px;
+    height: 2px;
     margin: 5px;
+}
+
+.burger:hover div  {
+    opacity: 0.5;
 }
 
 
@@ -225,6 +238,8 @@ header .logo span { font-weight: 600;}
     padding-top: 84px;
     height: 100%;
     overflow: hidden;
+    /* 추가 */
+    z-index: -1;
 }
 
 .fullshape .verticalline {
@@ -268,12 +283,6 @@ header .logo span { font-weight: 600;}
     position: relative;
     color: #fff;
     height: 78.5%;
-    box-sizing: border-box;
-    vertical-align: baseline;
-    letter-spacing: 0px;
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
 }
 .fullshape .midshape .midshapefull {
     position: relative;
@@ -383,7 +392,7 @@ header .logo span { font-weight: 600;}
 
 .fullshape .lastshape {
     position: relative;
-    color: rgb(31, 29, 29);
+    color: #fff;
     height: 21.5%;
 }
 
@@ -398,7 +407,7 @@ header .logo span { font-weight: 600;}
 .fullshape .lastshape .vidbtns {
     position: absolute;
     right: 60px;
-    bottom: 150px;
+    bottom: 60px;
 }
 .fullshape .lastshape .vidbtnsall {}
 .fullshape .lastshape .vidbtnsall button {
@@ -420,7 +429,7 @@ header .logo span { font-weight: 600;}
     font-weight: 500;
     width: 40px;
     height: 40px;
-    padding: 5px;
+    padding: 8px;
     font-size: 0;
     font-weight: 500;
 }
@@ -445,5 +454,3 @@ header .logo span { font-weight: 600;}
     align-items: flex-start;
     padding: 16px 0 160px;
 }
-
-
