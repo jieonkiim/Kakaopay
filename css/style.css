@@ -164,11 +164,20 @@ header .logo span { font-weight: 600;}
     color: var(--black);
 }
 
-
-.menu ul>li a { }
-.menu2 ul { }
-.menu2 ul>li {}
-.menu2 ul>li a {}
+.menu2 {
+    display: flex;
+}
+.menu2 .sub {
+    display: flex;
+    flex-direction: column;
+}
+.menu2 .sub-menu {
+    display: flex;
+    
+}
+.menu2 .sub-menu li {}
+.menu2 .sub-menu li a {}
+.menu2 .sub-menu li a.1stlist {}
 
 /* 헤더 오른쪽 lang KOR ENG 부분 */
 
@@ -454,3 +463,18 @@ header .logo span { font-weight: 600;}
     align-items: flex-start;
     padding: 16px 0 160px;
 }
+
+.horizontal-sec {}
+.horizontal-sec .img-area {}
+.lft {}
+.rght {}
+.long {}
+
+.horizontal-sec .info-area{}
+.horizontal-sec .info-area .iconimg {}
+.horizontal-sec .info-area .iconimg .sec-ico {}
+
+.horizontal-sec .info-area .txtarwarea {}
+.horizontal-sec .info-area .txtarwarea .txt-area {}
+.horizontal-sec .info-area .txtarwarea .txt-area h2 {}
+.horizontal-sec .info-area .txtarwarea .arrow {}
