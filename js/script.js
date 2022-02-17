@@ -27,6 +27,16 @@ $(document).ready(function() {
         $('header').css({'background-color': 'transparent' })
         
     })
+
+    //Footer의 관련사이트 클릭시 submenu 보여주기 
+    $('.footer-about .btn-about').on('click', function() {
+        $('.list-about').css({'display':'block'});
+        $('.btn-about > span').css({'transform' : 'rotate(45deg)'}, 200)
+    })
     
-    
+    $('.animate').scrolla({
+        mobile: true, // 모바일에서도 애니메이션 적용
+        once: false, // 한번만 실행할 것 인지
+    });
+
 })

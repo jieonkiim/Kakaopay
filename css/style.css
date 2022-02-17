@@ -763,3 +763,155 @@ header .logo span { font-weight: 600;}
 
 
 /* Footer */
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+    background-color: #f8f9fa;
+    z-index: 19;
+    padding: 0 48px;
+    border-top: 1px solid #e3e8ec;
+}
+
+.kakao-logo {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.71;
+    color: rgba(6, 11, 17, 0.48);
+    white-space: nowrap;
+}
+
+.footer-info-area {
+    white-space: nowrap;
+}
+
+
+.footer-info-area .footer-mid {
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    max-width: 790px;
+    line-height: 2;
+    margin-right: 56px;
+}
+
+.footer-info-area .footer-mid ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    text-align: left;
+    /* flex-wrap: wrap; */
+}
+
+.footer-info-area .footer-mid a li {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 32px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 14px;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+.footer-info-area .footer-mid a li:not(.first):before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 13px;
+    top: 2px;
+    left: 16px;
+    background-color: #e3e8ec;
+}
+
+
+.footer-info-area .footer-about {
+    position: relative;
+    width: 175px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px #87929c40;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-info-area .footer-about .btn-about {
+    display: inline-block;
+    vertical-align: middle;
+    text-align-last: left;
+    width: 100%;
+    font-size: 14px;
+    color: var(--gray);
+    margin-left: 16px;
+    line-height: 40px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+}
+
+.footer-info-area .footer-about .btn-about:hover {
+    color: var(--black);
+}
+
+.footer-about .btn-about span::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: #87929c80;
+    top: 18px;
+    right: 12px;
+}
+
+.footer-about .btn-about span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: #87929c80;
+    top: 18px;
+    right: 12px;
+    transform: rotate(90deg);
+}
+
+
+.footer-info-area .footer-about .list-about {
+    position: absolute;
+    display: none;
+    width: calc(100% + 1px);
+    bottom: 38px;
+    left: -2px;
+    color: rgb(135, 146, 156);
+    border: 1px solid #87929c50;
+    background-color: rgb(248, 249, 250);
+    text-align: left;
+}
+
+.footer-info-area .footer-about .list-about li {
+   display: flex;
+   align-items: center;
+   height: 40px;
+   padding: 0 12px;
+   font-size: 14px;
+   font-weight: 300;
+   line-height: 21px;
+   letter-spacing: -0.3px;
+}    
+
+
+.footer-info-area .footer-about .btn-about:checked + .list-about {
+    display: block; 
+}
+
+.footer-about .btn-about:checked > span {
+    transform: rotate(45deg);
+    transition: all 0.2s;
+}
