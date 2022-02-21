@@ -28,7 +28,7 @@
             <!-- 1. 비디오 & 블랙opacity 페이지 -->
             <div class="vidpage">
                 <div class="vidpagesub">
-                    <video autoplay loop muted playsinline src="https://t1.daumcdn.net/kakaopay/20211101152741/08a0cb31a3.mp4" frameborder="0" allowfullscreen></video>
+                    <video autoplay loop muted playsinline src="https://t1.daumcdn.net/kakaopay/20211101152741/08a0cb31a3.mp4" frameborder="0" allowfullscreen id="main-video"></video>
                     <div class="blackout"></div>
                 </div>
             </div>
@@ -214,11 +214,17 @@
                     </div>
                     <div class="vidbtns">
                         <div class="vidbtnsall">
-                            <button class="playpause">
-                                <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M11 4v16H8V4h3zm6 0v16h-3V4h3z"></path></g></svg>
+                            <button class="playpause active">
+                                <!--일시정지-->
+                                <svg width="24" id="img-pause" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M11 4v16H8V4h3zm6 0v16h-3V4h3z"></path></g></svg>
+                                <!--재생-->
+                                <svg width="24" id="img-play" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M19.857 12l-12 6.857V5.143z"></path></g></svg>
                             </button>
                             <button class="sound">
-                                <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M19.928 5.629A.984.984 0 0120 6v13.046a1 1 0 01-1.371.929L10 16.523v-8l8.629-3.451a1 1 0 011.3.557zM9 8.523v8H6a1 1 0 01-1-1v-6a1 1 0 011-1h3z"></path><path fill="#ffffff" stroke="#3B3838" d="M3.868 2.247l18.385 18.385-2.121 2.121L1.747 4.368l2.121-2.121z"></path></g></svg>
+                                <!-- 음소거 -->
+                                <svg width="24" id="audio-off" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M19.928 5.629A.984.984 0 0120 6v13.046a1 1 0 01-1.371.929L10 16.523v-8l8.629-3.451a1 1 0 011.3.557zM9 8.523v8H6a1 1 0 01-1-1v-6a1 1 0 011-1h3z"></path><path fill="#ffffff" stroke="#3B3838" d="M3.868 2.247l18.385 18.385-2.121 2.121L1.747 4.368l2.121-2.121z"></path></g></svg>
+                                <!-- 음소거 해제 -->
+                                <svg width="24" id="audio-on" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path fill="#ffffff" d="M19.928 5.629A.984.984 0 0120 6v13.046a1 1 0 01-1.371.929L10 16.523v-8l8.629-3.451a1 1 0 011.3.557zM9 8.523v8H6a1 1 0 01-1-1v-6a1 1 0 011-1h3z"></path></g></svg>
                             </button>
                             <button class="fullscreen">
                                 <svg width="24" height="24" viewBox="0 0 24 24"><g transform="translate(-8 -8)" fill="none" fill-rule="evenodd"><circle cx="20" cy="20" r="19.5" stroke="rgba(0, 0, 0, 0)" opacity="0.96"></circle><path fill="none" d="M11 11h18v18H11z"></path><path fill="#ffffff" d="M19 11v2h-6v6h-2v-8h8zM21 29v-2h6v-6h2v8h-8z"></path><path stroke="#ffffff" stroke-width="2" d="M13 13l15 15"></path><path d="M8 8h24v24H8z"></path></g></svg>

@@ -244,11 +244,11 @@ header .logo span { font-weight: 600;}
 
 .fullshape {
     position: relative;
-    padding-top: 84px;
-    height: 100%;
+    margin-top: 84px;
+    /* padding-top: 84px; */
+    /* height: 100%; */
+    height: calc(100% - 84px);
     overflow: hidden;
-    /* 추가 */
-    z-index: -1;
 }
 
 .fullshape .verticalline {
@@ -419,6 +419,20 @@ header .logo span { font-weight: 600;}
     bottom: 60px;
     flex-shrink: 0;
 }
+
+/* 동영상 제어 버튼 */
+.playpause #img-pause { display: none; }
+.playpause #img-play { display: block; }
+.playpause.active #img-pause { display: block; }
+.playpause.active #img-play { display: none; }
+
+/* 음소거 */
+.sound #audio-on { display: none; }
+.sound #audio-off { display: block; }
+.sound.active #audio-on { display: block; }
+.sound.active #audio-off { display: none; }
+
+
 .fullshape .lastshape .vidbtnsall {
     flex-shrink: 0;
 }

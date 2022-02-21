@@ -39,4 +39,38 @@ $(document).ready(function() {
         once: false, // 한번만 실행할 것 인지
     });
 
+
+
+    /* 메인 슬라이드 동영상 제어 */
+    // 재생/일시정지
+    $('.playpause').on('click', function() {
+        let video = $('video').get(0)
+
+        if( video.paused) {
+            video.play()
+        } else {
+            video.pause()
+        }
+
+        $('.playpause').toggleClass('active')
+        
+    })
+
+    // 음소거
+    $('.sound').on('click', function() {
+        let video = $('video').get(0)
+
+        if( video.muted ) {
+            $('#main-video').prop('muted', false)
+        } else {
+            $('#main-video').prop('muted', true)
+        }
+
+        $('.sound').toggleClass('active')
+        
+    })
+
+    // 전체화면
+    
+
 })
