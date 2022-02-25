@@ -87,7 +87,7 @@ header {
     align-items: flex-start;
     color: var(--white);
     background: transparent;
-    /* z-index: 21; */
+    z-index: 1000;
     overflow: hidden;
     transition: background-color 0.3s ease;
     /* transition-delay: 0.3s; */
@@ -568,17 +568,16 @@ header .logo span { font-weight: 600;}
     letter-spacing: -0.2px;
 }
 
-/* 문제 */
 .horizontal-sec:hover .btn-arrow {
-    background-color: var(--yellow);
-    font-weight: 700;
-    fill: var(--black); 
+    background-color: var(--yellow) !important;
     cursor: pointer;
-    border: 1px solid var(--black);
 }
 
-/* 문제 */
-.horizontal-sec:hover > img {
+.horizontal-sec:hover path[stroke] {
+    stroke: var(--black);  
+}
+
+.horizontal-sec:hover img {
     cursor: pointer;
 }
 
@@ -648,15 +647,14 @@ header .logo span { font-weight: 600;}
     width: 100%;
 }
 
-/* 문제 */
+/* 화살표 마우스 호버 */
 .vertical-box-left:hover .btn-arrow,
-.vertical-box-right:hover .btn-arrow {
+.vertical-box-left:hover path[stroke],
+.vertical-box-right:hover .btn-arrow,
+.vertical-box-right:hover path[stroke] {
     background-color: var(--yellow);
-    font-weight: 700;
-    fill: var(--black); 
     cursor: pointer;
-    border: 1px solid var(--black);
-    color: black;
+    stroke: var(--black);
 }
 
 .vertical-box-left:hover .vertical-img,
@@ -882,6 +880,7 @@ footer {
     background-color: #87929c80;
     top: 18px;
     right: 12px;
+    transition: all 0.4s;
 }
 
 .footer-about .btn-about span::after {
@@ -894,6 +893,7 @@ footer {
     top: 18px;
     right: 12px;
     transform: rotate(90deg);
+    transition: all 0.4s;
 }
 
 
@@ -907,6 +907,20 @@ footer {
     border: 1px solid #87929c50;
     background-color: rgb(248, 249, 250);
     text-align: left;
+}
+
+/* 푸터 + 클릭 */
+.footer-info-area .footer-about.on .list-about {
+    display: block;
+}
+
+.footer-info-area .footer-about.on .btn-about span::before {
+    transition: all 0.4s;
+    transform: rotate(45deg);
+}
+.footer-info-area .footer-about.on .btn-about span::after {
+    transition: all 0.4s;
+    transform: rotate(135deg);
 }
 
 .footer-info-area .footer-about .list-about li {

@@ -30,8 +30,9 @@ $(document).ready(function() {
 
     //Footer의 관련사이트 클릭시 submenu 보여주기 
     $('.footer-about .btn-about').on('click', function() {
-        $('.list-about').css({'display':'block'});
-        $('.btn-about > span').css({'transform' : 'rotate(45deg)'}, 200)
+        $('.footer-about').toggleClass('on')
+        // $('.list-about').css({'display':'block'});
+        // $('.btn-about > span').css({'transform' : 'rotate(45deg)'}, 200)
     })
     
     $('.animate').scrolla({
@@ -71,6 +72,42 @@ $(document).ready(function() {
     })
 
     // 전체화면
-    
+    $('.fullscreen').on('click', function() {
+        let video = $('video').get(0)
+
+        video.requestFullscreen()
+    })
+
+    // 스크롤 
+    let bright = 0
+    $(window).on('scroll', function() {
+        let now = $(this).scrollTop()               // 현재 스크롤 위치
+
+        bright = now / 10
+        // console.log(bright);
+
+        // 스크롤 시, 헤드풀 밝기 조절
+        $('.vidpage').css({'filter' : 'brightness(' + (100 - (bright - 20)) + '%)'})
+
+        // 스크롤 시, 헤더 고정
+        if( now > 500 ) {
+            $('header').css({
+                    'position' : 'fixed',
+                    'background-color': 'var(--white)',
+            })
+            $('.menu .main>li').css({'color' : 'var(--black'} )
+            $('.logo a').css({'color' : 'var(--black'} )
+        } else {
+            $('.menu .main>li').css({'color' : 'var(--white'} )
+            $('.logo a').css({'color' : 'var(--white'} )
+            $('header').stop().animate({'height': '84px'}, 400)
+            $('header').css({
+                'position' : 'absolute',
+                'background-color': 'transparent' 
+            })
+        }
+
+        
+    })
 
 })
