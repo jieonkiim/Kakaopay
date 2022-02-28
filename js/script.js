@@ -1,32 +1,36 @@
 
 $(document).ready(function() {
 
-    // 메뉴에 마우스 올리면, 배경 흰색
-    $('.menu ul.main li').on('mouseenter', function() {
-        $('header').css({'background-color': 'var(--white)' })
-        $('.menu .main>li').css({'color' : 'var(--black'} )
-        $('.logo a').css({'color' : 'var(--black'} )
-        $('header').stop().animate({'height': '84px'}, 400)
+    /* ============================  헤더 ============================ */
+    $('header').on('mouseover', function() {
+        $('header').toggleClass('on')
+    })
+
+    $('header').on('mouseout', function() {
+        $('header').toggleClass('on')
     })
     
-    // 서브메뉴에 마우스올리면, 헤더 높이를 늘려준다.
-    $('.menu ul.main li.pmenu').on('mouseenter', function() {
+    /* ============================  헤더 ============================ */
+    /* ============================  메뉴 ============================ */
+    // 메인 메뉴 - 마우스 올렸을 때 이벤트
+    let no
+    $('.mainmenu:not(".no")').on('mouseover', function() {
+        let index = $(this).index()
+        no = index + 1 
 
-        // 서브메뉴 보여주기
-        let li = $(this)
-        $('.menu2').css({'display': 'none'})
-        li.children('.menu2').css({'display': 'block'})
-        $('header').stop().animate({'height': '300px'}, 400)
+        $('.submenu:nth-of-type(' + no + ')').stop().slideDown(300)
     })
 
-    // 헤더를 벗어나면 배경 투명
-    $('header').on('mouseleave', function() {
-        $('.menu .main>li').css({'color' : 'var(--white'} )
-        $('.logo a').css({'color' : 'var(--white'} )
-        $('header').stop().animate({'height': '84px'}, 400)
-        $('header').css({'background-color': 'transparent' })
-        
+    $('.submenu').on('mouseover', function() {
+        $('.submenu').stop().slideDown(200)
     })
+
+    // 메인 메뉴 - 마우스가 벗어날 때 이벤트
+    $('header, .submenu').on('mouseout', function() {
+        $('.submenu').stop().slideUp(300)
+    })
+
+    /* ============================  메뉴 ============================ */
 
     //Footer의 관련사이트 클릭시 submenu 보여주기 
     $('.footer-about .btn-about').on('click', function() {
