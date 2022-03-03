@@ -11,25 +11,49 @@ $(document).ready(function() {
     })
     
     /* ============================  헤더 ============================ */
+    
     /* ============================  메뉴 ============================ */
     // 메인 메뉴 - 마우스 올렸을 때 이벤트
-    let no
-    $('.mainmenu:not(".no")').on('mouseover', function() {
+
+
+    // 메인 메뉴 - 마우스 올렸을 때, 이벤트
+    $('.mainmenu').on('mouseover', function() {
         let index = $(this).index()
-        no = index + 1 
+        let no = index+1
+        $(this).addClass('active')
 
-        $('.submenu:nth-of-type(' + no + ')').stop().slideDown(300)
+        let now = $(this).hasClass('no')
+        let prev = $(this).prev().hasClass('no')
+        let next = $(this).next().hasClass('no')
+
+        if( prev )
+            $('.submenu').css({'transition' : 'height 0.4s'})
+        else 
+            $('.submenu').css({'transition' : 'none'})
+            
+            if( now ) 
+            $('.submenu').css({'transition' : 'height 0.4s'})
+            
+        $('.submenu:nth-of-type(' + no + ')').addClass('active')
+      
     })
-
+    
     $('.submenu').on('mouseover', function() {
-        $('.submenu').stop().slideDown(200)
+        $(this).addClass('active')
+        // status = 'on'
     })
+    
+    // 메인 메뉴 - 마우스 벗어날 때, 이벤트
+    $('.mainmenu').on('mouseout', function() {
+        $(this).removeClass('active')
+        $('.submenu').removeClass('active')
 
-    // 메인 메뉴 - 마우스가 벗어날 때 이벤트
-    $('header, .submenu').on('mouseout', function() {
-        $('.submenu').stop().slideUp(300)
     })
-
+    
+    $('.submenu').on('mouseout', function() {
+        $(this).removeClass('active')
+        // status = 'off'
+    })
     /* ============================  메뉴 ============================ */
 
     //Footer의 관련사이트 클릭시 submenu 보여주기 
@@ -109,6 +133,12 @@ $(document).ready(function() {
                 'position' : 'absolute',
                 'background-color': 'transparent' 
             })
+        }
+
+        // 왼쪽박스 스크롤 올라가는 거
+        if( now > 900 ) {
+            let bottom = (now - 900) / 10
+            $('.vertical-box-left').css({'bottom' : bottom + 'px'})
         }
 
         

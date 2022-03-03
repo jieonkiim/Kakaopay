@@ -127,12 +127,14 @@ header.on .lang a { color: var(--gray) !important; }
 header.on .lang .burger div { background-color: var(--gray); }
 
 
+
+
 /* 헤더 가운데 메뉴 부분 */
 
 nav { width: 800px; }
 nav > ul { display: flex; }
 nav > ul > li {
-    padding: 20px;
+    /* padding: 20px; */
     width: 160px;
     /* height: 80px; */
     text-align: center;
@@ -141,25 +143,63 @@ nav > ul > li {
     cursor: pointer;
 }
 
-nav > ul > li a { color: white; }
+nav > ul > li a { 
+    color: white; 
+    position: relative;
+    margin: 0 25px;
+    display: inline-block;
+    line-height: 84px;
+}
 /* nav > ul > li:hover > .submenu { display: block; } */
 
 .logo img { height: 100%;}
 
+.mainmenu {
+    display: inline-block;
+    position: relative;
+    width: auto;
+    height: 84px;
+    padding-right: 24px;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.mainmenu a::after {
+    content: '';
+    width: 0;
+    height: 4px;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+    transition: width 0.5s;
+}
+
+.mainmenu.active a { font-weight: bold !important; }
+.mainmenu.active a::after { width: 100%; }
+.mainmenu.no a::after { width: 0; }
+
+.submenu-box { position: fixed; top: 0; left: 0; width: 100%; z-index: -1;}
+
 .submenu {
-    display: none;
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    height: 250px;
+    height: 0;
     background-color: var(--white);
+    transition: height 0.4s;
 }
 
 .submenu .inner { 
     display: flex;
     justify-content: center;
-
 }
 .submenu .inner .box {
     width: 120px;
@@ -167,6 +207,22 @@ nav > ul > li a { color: white; }
     border-left: 1px solid var(--gray);
 
  }
+
+/* 서브메뉴  */
+.submenu.active {
+    /* display: block; */
+    height: 334px;
+    transition: height 0.4s;
+}
+
+
+/* 서브메뉴 없는 요소 */
+.submenu.active.no {
+    height: 84px;
+    transition: height 0.4s;
+}
+
+
 
 
 /* 헤더 오른쪽 lang KOR ENG 부분 */
@@ -595,6 +651,7 @@ nav > ul > li a { color: white; }
 
 .vertical-box-left .vertical-info-area {
     flex: 1.75;
+    position: relative;
 }
 
 .vertical-info-area .vertical-text {
@@ -942,20 +999,16 @@ footer {
 
 /* All Animations */
 
-div.mid_shape #txt-animation { animation: slide-up 1s; }
-div.sectionfull #img-animation { animation: slide-up 1s; }
-div.sectionfull #txt-animation { animation: slide-up 3s; }
+div.mid_shape .txt-animation.motion { animation: slide-up 1s; }
+div.sectionfull .img-animation.motion { animation: slide-up 1s; }
+div.sectionfull .txt-animation.motion { animation: slide-up 3s; }
+div.sectionfull .card-animation.motion { animation: slide-up 1.5s; } 
 
-div.sectionfull #img-animation-vertical { animation: slide-up 2.5s; }
-div.sectionfull #txt-animation-vertical { animation: slide-up 1s; }
+div.sectionfull .img-animation-vertical.motion { animation: slide-up 2.5s; }
+div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
 
 
 @keyframes slide-up {
     0% { opacity: 0; }
     10% { opacity: 0; transform: translateY(10px); }
-}
-
-@keyframes slide-up-vertical {
-    0% { opacity: 0; }
-    10% { opacity: 0; transform: translateY(15px); }
 }
