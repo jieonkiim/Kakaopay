@@ -216,13 +216,48 @@ nav > ul > li a {
 }
 
 
+.submenu .inner  { 
+    display: none; 
+
+}
+.submenu.active .inner { display: block; }
+
+.submenu .inner ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.submenu.active .inner ul li {
+    width: 120px;
+    height: 214px;
+    padding: 20px;
+    border-left: 1px solid var(--shapewhite);
+    border-collapse: collapse;
+}
+.submenu .inner ul li:last-of-type {
+    border-right: 1px solid var(--shapewhite);
+
+}
+
+
+.submenu .inner ul li
+
 /* 서브메뉴 없는 요소 */
 .submenu.active.no {
     height: 84px;
     transition: height 0.4s;
 }
 
+.submenu .inner ul li.sub-title > a  {  margin-bottom: 22px; display: block; }
+.submenu .inner ul li.sub-title .sub-etc { margin-bottom: 16px; }
 
+.submenu .inner ul li.sub-title > a { font-weight: bold; color: var(--black); }
+.submenu .inner ul li.sub-title .sub-etc > a { }
 
 
 /* 헤더 오른쪽 lang KOR ENG 부분 */
@@ -1002,7 +1037,6 @@ footer {
 div.mid_shape .txt-animation.motion { animation: slide-up 1s; }
 div.sectionfull .img-animation.motion { animation: slide-up 1s; }
 div.sectionfull .txt-animation.motion { animation: slide-up 3s; }
-div.sectionfull .card-animation.motion { animation: slide-up 1.5s; } 
 
 div.sectionfull .img-animation-vertical.motion { animation: slide-up 2.5s; }
 div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
@@ -1011,4 +1045,9 @@ div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
 @keyframes slide-up {
     0% { opacity: 0; }
     10% { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes slide-up-vertical {
+    0% { opacity: 0; }
+    10% { opacity: 0; transform: translateY(15px); }
 }
