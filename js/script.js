@@ -17,6 +17,7 @@ $(document).ready(function() {
 
 
     // 메인 메뉴 - 마우스 올렸을 때, 이벤트
+    let prevNo = 0
     $('.mainmenu').on('mouseover', function() {
         let index = $(this).index()
         let no = index+1
@@ -26,16 +27,35 @@ $(document).ready(function() {
         let prev = $(this).prev().hasClass('no')
         let next = $(this).next().hasClass('no')
 
-        if( prev )
-            $('.submenu').css({'transition' : 'height 0.4s'})
-        else 
-            $('.submenu').css({'transition' : 'none'})
+        console.log('now : ' + now);
+        console.log('prev : ' + prev);
+        console.log('next : ' + next);
+
+        if( prevNo < no ) {
             
+            if( prev )
+                $('.submenu').css({'transition' : 'height 0.4s'})
+            else 
+                $('.submenu').css({'transition' : 'none'})
+                
             if( now ) 
-            $('.submenu').css({'transition' : 'height 0.4s'})
+                $('.submenu').css({'transition' : 'height 0.4s'})
+
+        }
+        else {
+            if( next )
+                $('.submenu').css({'transition' : 'height 0.4s'})
+            else 
+                $('.submenu').css({'transition' : 'none'})
+
+            if( now ) 
+                $('.submenu').css({'transition' : 'height 0.4s'})
+        }
             
         $('.submenu:nth-of-type(' + no + ')').addClass('active')
       
+
+        prevNo = no
     })
     
     $('.submenu').on('mouseover', function() {
@@ -68,6 +88,16 @@ $(document).ready(function() {
         once: false, // 한번만 실행할 것 인지
     });
 
+    // 햄버거 리스트 메뉴 
+    $('.burger').on('click', function() {
+        $('.burger-list').toggleClass('on');
+        $('.burger-menu-list').toggleClass('on');
+        $('header').toggleClass('burgerOn');
+        $('.mainmenu').toggleClass('on');
+        $('logo').toggleClass('on');
+        $('body').toggleClass('on');
+
+    })
 
 
     /* 메인 슬라이드 동영상 제어 */
@@ -119,20 +149,11 @@ $(document).ready(function() {
 
         // 스크롤 시, 헤더 고정
         if( now > 500 ) {
-            $('header').css({
-                    'position' : 'fixed',
-                    'background-color': 'var(--white)',
-            })
-            $('.menu .main>li').css({'color' : 'var(--black'} )
-            $('.logo a').css({'color' : 'var(--black'} )
+            $('header').css({ 'position' : 'fixed', })
+            $('header').addClass('on')
         } else {
-            $('.menu .main>li').css({'color' : 'var(--white'} )
-            $('.logo a').css({'color' : 'var(--white'} )
-            $('header').stop().animate({'height': '84px'}, 400)
-            $('header').css({
-                'position' : 'absolute',
-                'background-color': 'transparent' 
-            })
+            $('header').css({ 'position' : 'absolute',})
+            $('header').removeClass('on')
         }
 
         // 왼쪽박스 스크롤 올라가는 거

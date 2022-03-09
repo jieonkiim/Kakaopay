@@ -83,7 +83,7 @@ header {
     /* min-width: 1200px; */
     min-height: 84px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     color: var(--white);
     background: transparent;
@@ -104,11 +104,13 @@ header::before {
 }
 
 header a { cursor: pointer; }
+
+
 header .logo { 
     /* position: absolute;
     top: 23px; */
     padding: 26px;
-    left: 78px;
+    padding-left: 78px;
 }
 
 /* 헤더 로고 부분 */
@@ -126,12 +128,16 @@ header.on .menu .mainmenu a { color: var(--black); font-weight: 300;}
 header.on .lang a { color: var(--gray) !important; }
 header.on .lang .burger div { background-color: var(--gray); }
 
-
+header.burgerOn {
+    background-color: rgb(25, 28, 32);
+}
+header .logo.on { color: var(--white); }
+body.on { overflow-y: hidden; }
 
 
 /* 헤더 가운데 메뉴 부분 */
 
-nav { width: 800px; }
+nav { }
 nav > ul { display: flex; }
 nav > ul > li {
     /* padding: 20px; */
@@ -183,6 +189,7 @@ nav > ul > li a {
 .mainmenu.active a { font-weight: bold !important; }
 .mainmenu.active a::after { width: 100%; }
 .mainmenu.no a::after { width: 0; }
+.mainmenu.on { display: none;}
 
 .submenu-box { position: fixed; top: 0; left: 0; width: 100%; z-index: -1;}
 
@@ -215,6 +222,9 @@ nav > ul > li a {
     transition: height 0.4s;
 }
 
+.submenu.active.no {
+    height: 84px;
+}
 
 .submenu .inner  { 
     display: none; 
@@ -254,10 +264,13 @@ nav > ul > li a {
 }
 
 .submenu .inner ul li.sub-title > a  {  margin-bottom: 22px; display: block; }
-.submenu .inner ul li.sub-title .sub-etc { margin-bottom: 16px; }
+.submenu .inner ul li.sub-title .sub-etc { margin-bottom: 16px; flex-shrink: 0;}
 
 .submenu .inner ul li.sub-title > a { font-weight: bold; color: var(--black); }
-.submenu .inner ul li.sub-title .sub-etc > a { }
+.submenu .inner ul li.sub-title:hover { background-color: var(--shapewhite);}
+.submenu .inner ul li.sub-title:hover > a { text-decoration: underline; }
+
+.submenu .inner ul li.sub-title a:hover { text-decoration: underline; }
 
 
 /* 헤더 오른쪽 lang KOR ENG 부분 */
@@ -266,7 +279,7 @@ nav > ul > li a {
     display: flex;
     align-items: center;
     margin-top: 30px;
-    padding-right: 100px;
+    padding-right: 30px;
     position: relative;
 }
 .lang ul { display: flex; align-items: center; justify-content: space-between;}
@@ -302,6 +315,85 @@ nav > ul > li a {
 }
 
 
+
+
+/* burger menu list */
+
+.burger-list {
+    width: 100vw;
+    height: calc(100vh - 69px);
+    position: fixed;
+    top: 84px;
+    left: 0;
+    overflow-x: scroll;
+    z-index: 21;
+    background-color: rgb(25, 28, 32);
+    display: none;
+}
+
+.burger-menu-list {
+    padding-left: 120px;
+    white-space: nowrap;
+    justify-content: center;
+    display: none;
+}
+
+.burger-list.on,
+.burger-menu-list.on {
+    display: block;
+}
+
+.burger-menu-list .burger-submenu {
+    display: inline-block;
+    width: 200px;
+    min-height: calc(100vh - 84px);
+    padding: 40px 0 120px;
+    text-align: center;
+    vertical-align: top;
+    border-left: solid 1px rgba(151, 151, 151, 0.16);
+    flex-shrink: 0;
+}
+
+.burger-menu-list .burger-submenu:last-of-type {
+    border-right: solid 1px rgba(151, 151, 151, 0.16);
+}
+.burger-menu-list .burger-submenu > a p {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.45;
+    letter-spacing: -0.2px;
+    color: #f8f9fa;
+}
+.burger-menu-list .burger-submenu .burger-sub-etc {
+    margin: 45px 0;
+}
+.burger-menu-list .burger-submenu .burger-sub-etc .sub-etc-list {
+    margin-bottom: 45px;
+}
+
+.sub-etc-list > a p {
+    margin: 0 0 21px;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.21;
+    color: #f8f9fa;
+}
+
+.burger-menu-list .burger-submenu .burger-sub-etc .sub-etc-list .sub-etc-items {
+
+}
+.burger-menu-list .burger-submenu .burger-sub-etc .sub-etc-list .sub-etc-items .sub-etc-bits {}
+.sub-etc-bits > a p {
+    margin-bottom: 15px;
+    opacity: 0.48;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.21;
+    letter-spacing: -0.1px;
+    white-space: normal;
+    color: #f8f9fa;
+}
 
 
 
@@ -1050,4 +1142,169 @@ div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
 @keyframes slide-up-vertical {
     0% { opacity: 0; }
     10% { opacity: 0; transform: translateY(15px); }
+}
+
+
+
+.pc { display: block; }
+
+
+/* 반응형 - 모바일 */
+@media (max-width: 768px) {
+    .pc { display: none; }
+
+    .vidpage,
+    div.fullshape {
+        width: 100vw;
+    }
+    
+    header { 
+        justify-content: space-between; 
+        width: 100vw;
+    }
+
+    .lang {
+        margin-left: 20px;
+    }
+
+    .fullshape .midshape .midshapefull .shape2 .txt {
+        font-size: 3.5em;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+
+    .horizontal-sec {
+        flex-direction: column-reverse;
+        width: 100vw;
+        padding-top: 60px;
+        margin-top: 0;
+    }
+
+    .horizontal-sec.last {
+        flex-direction: column;
+        width: 100vw;
+        padding-top: 60px;
+        margin-top: 0;
+    }
+
+    .horizontal-sec .img-area {
+        width: 100vw;
+    }
+
+    .horizontal-sec .info-area {
+        display: block;
+        padding-right: 30px;
+        overflow: visible;
+    }
+    
+    .horizontal-sec .info-area .txtarwarea .txt-area h2 {
+        margin: 0px 20px 50px;
+        font-size: 30px;
+        word-break: keep-all;
+        width: calc(100% - 64px);
+        text-align: left;
+    }
+
+    .horizontal-sec .info-area .txtarwarea .btn-arrow {
+        position: absolute;
+        bottom: 50px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .horizontal-sec .info-area .iconimg .sec-ico {
+        margin: 0px 0px 10px 20px;
+    }
+
+    .vertical-box-left,
+    .vertical-box-right {
+        display: inline-flex;
+        margin: 0;
+        width: 100vw;
+        transform: translateY(10%);
+        margin-bottom: 96px;
+    }
+    
+    .vertical-box-left .empty-box,
+    .vertical-box-right .empty-box {
+        display: none;
+    }
+
+    .vertical-info-area .vertical-text {
+        margin: 0px 50px 20px;
+        font-size: 30px;
+        word-break: keep-all;
+        width: calc(100% - 64px);
+        text-align: left;
+    }
+
+    .vertical-box-left .vertical-info-area .btn-arrow,
+    .vertical-box-right .vertical-info-area .btn-arrow {
+        left: 90%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-section {
+        width: 100vw;
+        margin-top: 100px;
+    }
+
+    .horizontal-sec .empty-box {
+        display: none;
+    }
+    
+    .horizontal-sec .img-area-last {
+        width: 100vw;
+    }
+    
+    .horizontal-sec .img-area-last img {
+        width: 100%;
+        padding-bottom: 80px;
+    }
+
+    footer {
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: baseline;
+        height: auto;
+        min-height: 280px;
+        padding: 24px 20px 104px;
+    }
+
+    .kakao-logo {
+        font-size: 10px;
+        line-height: 16px;
+        letter-spacing: normal;
+        margin: 20px auto 18px 12px;
+    }
+
+    .totalpage .footer-info-area {
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .footer-info-area .footer-mid { margin: 0; }
+    .footer-mid ul {
+        width: 100%;
+        max-width: 380px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        justify-content: space-between;
+    }
+  
+    .footer-info-area .footer-mid a li:before {
+        display: none;
+    }
+
+    .footer-info-area .footer-about {
+        width: 100%;
+        margin-bottom: 30px;
+    }
 }
