@@ -94,7 +94,7 @@ $(document).ready(function() {
         $('.burger-menu-list').toggleClass('on');
         $('header').toggleClass('burgerOn');
         $('.mainmenu').toggleClass('on');
-        $('logo').toggleClass('on');
+        $('.logo').toggleClass('on');
         $('body').toggleClass('on');
 
     })
