@@ -3,11 +3,17 @@ $(document).ready(function() {
 
     /* ============================  헤더 ============================ */
     $('header').on('mouseover', function() {
-        $('header').toggleClass('on')
+        let burgerOn = $('header').hasClass('burgerOn')
+        if( !burgerOn ) {
+            $('header').toggleClass('on')
+        }
     })
-
+    
     $('header').on('mouseout', function() {
-        $('header').toggleClass('on')
+        let burgerOn = $('header').hasClass('burgerOn')
+        if( !burgerOn ) {
+            $('header').toggleClass('on')
+        }
     })
     
     /* ============================  헤더 ============================ */

@@ -126,7 +126,7 @@ header.on {
 header.on .logo a { color: var(--black); }
 header.on .menu .mainmenu a { color: var(--black); font-weight: 300;}
 header.on .lang a { color: var(--gray) !important; }
-header.on .lang .burger div { background-color: var(--gray); }
+header.on .lang .burger .line div { background-color: var(--gray); }
 
 header.burgerOn {
     background-color: rgb(25, 28, 32);
@@ -298,15 +298,38 @@ nav > ul > li a {
     z-index: 300;
 }
 
-.burger div {
+.burger .line { display: block; }
+
+.burger .line div {
     background-color: #dfe1e2;
     width: 20px;
     height: 2px;
     margin: 5px;
 }
 
-.burger:hover div  {
+.burger:hover .line div  {
     opacity: 0.5;
+}
+
+/* 햄버거 x버튼 */
+.burger .close {
+    display: none;    
+}
+
+header.burgerOn .burger .line { display: none; }
+header.burgerOn .burger .close { display: block; }
+
+.burger .close div{ 
+    background-color: #dfe1e2;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+}
+.burger .close .line1{
+    transform: rotate(45deg) ;
+}
+.burger .close .line2{
+    transform: rotate(-45deg) ;
 }
 
 
@@ -341,11 +364,12 @@ nav > ul > li a {
 
 .burger-list.on,
 .burger-menu-list.on {
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 
 .burger-menu-list .burger-submenu {
-    display: inline-block;
+    /* display: inline-block; */
     width: 200px;
     min-height: calc(100vh - 84px);
     padding: 40px 0 120px;
@@ -994,12 +1018,13 @@ footer {
 .footer-info-area .footer-mid a li {
     position: relative;
     display: inline-block;
-    padding: 0 0 0 32px;
+    padding-left: 10px;
     font-size: 14px;
     font-weight: 300;
     line-height: 14px;
     color: var(--gray);
     cursor: pointer;
+    width: 120px;
 }
 
 .footer-info-area .footer-mid a li:not(.first):before {
@@ -1151,6 +1176,11 @@ div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
 @media (max-width: 768px) {
     .pc { display: none; }
 
+
+    .totalpage {
+        min-width: 100%;
+    }
+
     .vidpage,
     div.fullshape {
         width: 100vw;
@@ -1279,7 +1309,7 @@ div.sectionfull .txt-animation-vertical.motion { animation: slide-up 1s; }
     }
 
     .totalpage .footer-info-area {
-        width: 100vw;
+        width: 100%;
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
